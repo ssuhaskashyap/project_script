@@ -1,9 +1,15 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-function add(num1, num2) {
-  currentResult = currentResult + Number(userInput.value);
-  outputResult(currentResult, '');
+function userInputNumber() {
+  return parseInt(userInput.value);
+}
+
+function add() {
+  const enteredNumber = userInputNumber();
+  const calcDescription = `${currentResult} + ${enteredNumber}`;
+  currentResult = currentResult + enteredNumber;
+  outputResult(currentResult, calcDescription);
 }
 
 addBtn.addEventListener('click', add);
